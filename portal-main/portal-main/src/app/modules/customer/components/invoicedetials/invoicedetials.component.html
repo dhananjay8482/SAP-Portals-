@@ -1,0 +1,40 @@
+
+<div class="table__cont">
+  <div class="search-box">
+
+    <button class="btn-search" (click)="myFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    <input type="text" id="myInput" class="input-search" (click)="myFunction()" placeholder="Type to Search...">
+
+   
+
+  </div>
+    <div *ngIf="invoicelist" style="margin: 5%;">
+        <h2 style="text-align: center;">Invoice List</h2>
+        <table  id="myTable">
+          <thead >
+            <tr>
+    
+    
+              <th>CREATED ON</th>
+              <th>PURCHASE ORDER</th>
+              <th>RECORD DATE</th>
+              <th >CREATED BY</th>
+              <th>POSTED TIME</th>
+              <th>TRADE NUMBER</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chs of invoicelist" >
+              <td>{{chs.AEDAT._text}}</td>
+              <td>{{chs.BSTNK_VF._text}}</td>
+              <td>{{chs.ERDAT._text}}</td>
+              <td>{{chs.ERNAM._text}}</td>
+              <td>{{chs.ERZET._text}}</td>
+              <td>{{chs.EXNUM._text}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

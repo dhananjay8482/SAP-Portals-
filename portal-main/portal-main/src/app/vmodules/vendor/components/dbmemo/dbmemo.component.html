@@ -1,0 +1,41 @@
+<div class="table__cont">
+  <div class="search-box">
+
+    <button class="btn-search" (click)="myFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    <input type="text" id="myInput" class="input-search" (click)="myFunction()" placeholder="Type to Search...">
+
+   
+
+  </div>
+    <div *ngIf="vdebit" style="margin: 5%;">
+        <h2 style="text-align: center;">Debit Information</h2>
+        <table  id="myTable">
+          <thead >
+            <tr>
+    
+    
+              <th>COMPANY CODE</th>
+              <!-- <th>AUGDT</th> -->
+              <th>BELNR</th>
+              <th >MATERIAL NUMBER</th>
+              <th>UNIT</th>
+              <th>ORDER QUANTITY</th>
+              <th>WERKS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chs of vdebit" >
+              <td>{{chs.BUKRS._text}}</td>
+              <!-- <td>{{chs.AUGDT._text}}</td> -->
+              <td>{{chs.BELNR._text}}</td>
+              <td>{{chs.MATNR._text}}</td>
+              <td>{{chs.MEINS._text}}</td>
+              <td>{{chs.MENGE._text}}</td>
+              <td>{{chs.WERKS._text}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  

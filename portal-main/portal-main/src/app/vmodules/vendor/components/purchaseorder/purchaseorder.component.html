@@ -1,0 +1,45 @@
+<div class="table__cont">
+  <div class="search-box">
+
+    <button class="btn-search" (click)="myFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    <input type="text" id="myInput" class="input-search" (click)="myFunction()" placeholder="Type to Search...">
+
+   
+
+  </div>
+    <div *ngIf="purchase" style="margin: 5%;">
+        <h2 style="text-align: center;">Purchase Order</h2>
+        <table  id="myTable">
+          <thead >
+            <tr>
+    
+    
+              <th>DOC_DATE</th>
+              <th>EXCH_RATE_CM</th>
+              <!-- <th>ITEM_INTVL</th> -->
+              <th >LAST ITEM</th>
+              <!-- <th>QUOT_DATE</th> -->
+              <th>QUOT_DEAD</th>
+              <!-- <th>RCVG_VEND</th> -->
+              <th>SUBITEMINT</th>
+              <th>WARRANTY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chs of purchase" >
+              <td>{{chs.DOC_DATE._text}}</td>
+              <td>{{chs.EXCH_RATE_CM._text}}</td>
+              <!-- <td>{{chs.ITEM_INTVL._text}}</td> -->
+              <td>{{chs.LAST_ITEM._text}}</td>
+              <!-- <td>{{chs.QUOT_DATE._text}}</td> -->
+              <td>{{chs.QUOT_DEAD._text}}</td>
+              <!-- <td>{{chs.RCVG_VEND._text}}</td> -->
+              <td>{{chs.SUBITEMINT._text}}</td>
+              <td>{{chs.WARRANTY._text}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  

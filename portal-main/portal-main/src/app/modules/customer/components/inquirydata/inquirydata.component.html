@@ -1,0 +1,42 @@
+
+<div class="table__cont">
+  <div class="search-box">
+
+    <button class="btn-search" (click)="myFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    <input type="text" id="myInput" class="input-search" (click)="myFunction()" placeholder="Type to Search...">
+
+   
+
+  </div>
+<div *ngIf="inquiry" style="margin: 5%;">
+    <h2 style="text-align: center;">Inquiry Data</h2>
+    <table id="myTable">
+      <thead >
+        <tr>
+
+
+          <th>ITEM ID</th>
+          <th>CREATED BY</th>
+          <th>SALES DATE</th>
+          <th >ENTRY TIME</th>
+          <th>NET VALUE</th>
+          <th>PRICING PROCEDURE</th>
+          <!-- <th >POSNR_VOR</th> -->
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let chs of inquiry" >
+          <td>{{chs.VBELN._text}}</td>
+          <td>{{chs.ERNAM._text}}</td>
+          <td>{{chs.AUDAT._text}}</td>
+          <td>{{chs.ERZET._text}}</td>
+          <td>{{chs.NETWR._text}}</td>
+          <td>{{chs.KALSM._text}}</td>
+          <!-- <td>{{chs.BSTNK._text}}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="table__cont">
+  <div class="search-box">
+
+    <button class="btn-search" (click)="myFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    <input type="text" id="myInput" class="input-search" (click)="myFunction()" placeholder="Type to Search...">
+
+   
+
+  </div>
+  <div *ngIf="vinvoice" style="margin: 5%;">
+      <h2 style="text-align: center;">Invoice Details</h2>
+      <table  id="myTable">
+        <thead >
+          <tr>
+  
+  
+            <th>INVOICE BELNR</th>
+            <th>POSTING KEY</th>
+            <th>ORDER UNIT</th>
+            <th >BUZID</th>
+            <th>VALUATION AREA</th>
+            <th>AMOUNT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let chs of vinvoice" >
+            <td>{{chs.BELNR._text}}</td>
+            <td>{{chs.BSCHL._text}}</td>
+            <td>{{chs.BPRME._text}}</td>
+            <td>{{chs.BUZID._text}}</td>
+            <td>{{chs.BWKEY._text}}</td>
+            <td>{{chs.DMBTR._text}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

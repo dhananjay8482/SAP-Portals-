@@ -1,0 +1,22 @@
+<nav class="sidenav">
+  <div class="cont1">
+    <div class="cust-logo">
+      <img src="/assets/images/profile.png" alt="" class="cust-logo-img">
+    </div>
+    
+    <h1 class="hed-main">Customer Portal</h1>
+  </div>
+
+  <ul class="list-items">
+    <li><a href="#" [routerLink]="'/customer/Profile'"><i class="fa-solid fa-user"></i>Profile</a></li>
+    <li><a href="#" [routerLink]="'/customer/Inquirydata'"><i class="fa-solid fa-magnifying-glass"></i>Inquiry data</a></li>
+    <li><a href="#" [routerLink]="'/customer/saleOrder'"><i class="fa-solid fa-chart-line"></i>Sale Order Data</a></li>
+    <li><a href="#" [routerLink]="'/customer/listOfDelivery'"><i class="fa-solid fa-truck"></i>List of Delivery</a></li>
+    <li><a href="#" [routerLink]="'/customer/financesheet'"><i class="fa-solid fa-chart-pie"></i>Financial Sheet</a></li>
+    <li><a href="#" (click)="logout()" ><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
+  </ul>
+<!--     
+  <div class="list-items logout">
+    <li><a href="#" [routerLink]="'/landingPage'"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
+  </div> -->
+</nav>

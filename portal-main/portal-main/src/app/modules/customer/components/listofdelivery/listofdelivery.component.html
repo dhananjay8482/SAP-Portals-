@@ -1,0 +1,39 @@
+<div class="table__cont">
+  <div class="search-box">
+
+    <button class="btn-search" (click)="myFunction()"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+    <input type="text" id="myInput" class="input-search" (click)="myFunction()" placeholder="Type to Search...">
+
+   
+
+  </div>
+    <div *ngIf="delivery" style="margin: 5%;">
+        <h2 style="text-align: center;">List Of Delivery</h2>
+        <table  id="myTable">
+          <thead >
+            <tr>
+              <th>CREATED ON</th>
+              <th>CHANGED BY</th>
+              <th>TOTAL WEIGHT</th>
+              <!-- <th >FKAIV</th> -->
+              <th>LOADING DATE</th>
+              <th >DELIVERY TYPE</th>
+              <th >DELIVERY TIME</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chs of delivery" >
+              <td>{{chs.AEDAT._text}}</td>
+              <td>{{chs.AENAM._text}}</td>
+              <td>{{chs.BTGEW._text}}</td>
+              <!-- <td>{{chs.FKAIV._text}}</td> -->
+              <td>{{chs.LDDAT._text}}</td>
+              <td>{{chs.LFART._text}}</td>
+              <td>{{chs.LFUHR._text}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

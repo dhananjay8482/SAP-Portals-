@@ -1,0 +1,33 @@
+<div class="table__cont">
+
+
+
+  <!-- <input type="button"  value="Download PDF" class="Download__btn" (click)="SavePDF()"> -->
+  <button class="btn-download" (click)="SavePDF()" value="Download PDF"> <i class="fa fa-download"></i>Download </button>
+    <div *ngIf="epayslip" style="margin: 5%;">
+        <h2 style="text-align: center;">PAY SLIP</h2>
+        <table >
+          <thead >
+            <tr>
+              <th>FPPERIOD</th>
+              <th>PAY TYPE</th>
+              <th >SEQUENCENUMBER</th>
+              <th>START DATE</th>
+              <th>END DATE</th>
+              <th>OCREASON</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chs of epayslip" >
+              <td>{{chs.FPPERIOD._text}}</td>
+              <td>{{chs.PAYTYPE_TEXT._text}}</td>
+              <td>{{chs.SEQUENCENUMBER._text}}</td>
+              <td>{{chs.FPBEGIN._text}}</td>
+              <td>{{chs.FPEND._text}}</td>
+              <td>{{chs.OCREASON._text}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
