@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="SF-Portal1.controller.Inspection"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="INSPECTION"  showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<Table id="idOrdersTable"  items="{notificationList>/results}" mode="SingleSelectMaster" selectionChange="onPress" growing="true" growingThreshold="15">
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <Title text="Inspection List"/>
+                                    <Text text="{view>/myName}"></Text>
+                                <Text text="Items are Listed below"></Text>
+                                <ToolbarSpacer/>
+                                <SearchField width="25%" id="search" liveChange="onSearch" value="{/Insplot}" placeholder="Search with Record Numnber"/>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Text text="Inspection lot no"/>
+                            </Column>
+                            <Column>
+                                <Text text="Material no"/>
+                            </Column>
+                            <Column>
+                                <Text text="Plant"/>
+                            </Column>
+                            <Column>
+                                <Text text="Material name"/>
+                            </Column>
+                            <Column>
+                                <Text text="Vendor"/>
+                            </Column>
+                            <Column>
+                                <Text text="Created Date"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem press="onRowPress" type="Navigation">
+                                <cells>
+                                    <!--<Text text="{=parseFloat(${notificationList>Insplot}) }"/>-->
+                                    <ObjectNumber number="{= parseFloat(${notificationList>Insplot}) }"/>
+
+                                    <Text text="{notificationList>Material}"/>
+                                    <Text text="{notificationList>Plant}"/>
+                                    <Text text="{notificationList>TxtMat}"/>
+                                    <ObjectStatus text="{path: 'notificationList>Vendor', formatter: '.emptyDec1'}"></ObjectStatus>
+                                    <Text text="{ path: 'notificationList>CreatDat', type: 'sap.ui.model.type.DateTime', formatOptions: { pattern: 'dd MMMM yyyy' } }"/>
+
+
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

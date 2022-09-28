@@ -1,0 +1,69 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="test.routing-sample.controller.ViewWorkOrder"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Work Order" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					
+					
+					<Table id="idOrdersTable" items="{Workorderlist>/results}" mode="SingleSelectMaster" selectionChange="onPress" growing="true"
+                        growingThreshold="15">
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <Title text="WorkOrder List"/>
+                                <Text text="{view>/myName}"></Text>
+                                <Text text="Items are Listed below"></Text>
+                                <ToolbarSpacer/>
+                                <SearchField width="25%" id="search" liveChange="onSearch" value="{/Equipment}" placeholder="Search with Record Numnber"/>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Text text="Plan Plant"/>
+                            </Column>
+                            <Column>
+                                <Text text="Plan Group"/>
+                            </Column>
+                            <Column>
+                                <Text text="Equipment"/>
+                            </Column>
+                            <Column>
+                                <Text text="Equipment No"/>
+                            </Column>
+                            <Column>
+                                <Text text="Description"/>
+                            </Column>
+                            <Column>
+                                <Text text="Start Date"/>
+                            </Column>
+                            <Column>
+                                <Text text="Finish Date"/>
+                            </Column>
+                            <Column>
+                                <Text text="Status"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem type="Navigation">
+                                <cells>
+                                    <Text text="{Workorderlist>Planplant}"/>
+                                    <Text text="{Workorderlist>Plangroup}"/>
+                                    <Text text="{Workorderlist>Equipment}"/>
+                                    <Text text="{Workorderlist>Equidescr}"/>
+                                    <Text text="{Workorderlist>Description}"/>
+
+                                    <Text text="{ path: 'Workorderlist>LateSchedStartDate', type: 'sap.ui.model.type.DateTime', formatOptions: { pattern: 'dd MMMM yyyy' } }"/>
+                                    <Text text="{ path: 'Workorderlist>LateSchedFinDate', type: 'sap.ui.model.type.DateTime', formatOptions: { pattern: 'dd MMMM yyyy' } }"/>
+
+                                    <ObjectStatus text="{path: 'Workorderlist>SStatus', formatter: '.charchange'}"
+                                        icon="{path: 'Workorderlist>SStatus', formatter: '.statusIndicator'}" state="{path: 'Workorderlist>SStatus', formatter: '.formatStatus'}"></ObjectStatus>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+					<List id="trying"></List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

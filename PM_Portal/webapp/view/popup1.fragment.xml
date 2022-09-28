@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog title="Workorder detials">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+				<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" title="Plant 0001" labelSpanL="3"
+					labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="2" columnsM="2">
+					<f:content>
+						<Label text="Sort field"/>
+						<Text text="gdf" id="notiextra1"></Text>
+						<Label text="RefDate"/>
+						<Text text="fsdf" id="notiextra2"></Text>
+						<Label text="WorkCntr"/>
+						<Text id="notiextra3" text="fsdf"></Text>
+						<Label text="OrderType"/>
+						<Text id="notiextra4" text="fsdf"></Text>
+						<Label text="OrderType"/>
+						<Text id="notiextra5" text="fsdf"></Text>
+					</f:content>
+				</f:SimpleForm>
+			</l:content>
+		</l:Grid>
+		<Button text="CLOSE" press="closeDialog"/>
+		<!--<ImageContent src="sap-icon://decline" class="frag-close-btn" press="closeDialog"/>-->
+	</Dialog>
+</core:FragmentDefinition>

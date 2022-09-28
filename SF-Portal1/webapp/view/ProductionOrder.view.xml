@@ -1,0 +1,47 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="SF-Portal1.controller.ProductionOrder"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Production Order" showNavButton="true" navButtonPress="onNavBack" >
+				<content>
+					<Table id="idOrdersTable" items="{notificationList>/results}" mode="SingleSelectMaster" selectionChange="action">
+						<headerToolbar>
+						<OverflowToolbar>
+							<Title text="Production Order"/>
+							<ToolbarSpacer/>
+							<DatePicker id="DP1" placeholder="Enter Date" change="handleChange" class="sapUiResponsiveMargin" width="auto"/>
+							<DatePicker id="DP2" placeholder="Enter Date" change="handleChange" class="sapUiResponsiveMargin" width="auto"/>
+							<Button xmlns="sap.m" icon="sap-icon://filter" text="Filter" press="filter" tooltip="Used to generate random number"
+							class="sapUiResponsiveMargin" width="auto"/>
+						</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="MaterialText"/>
+							</Column>
+							<Column>
+								<Text text="OrderType"/>
+							</Column>
+							<Column>
+								<Text text="EnterDate"/>
+							</Column>
+							<Column>
+								<Text text="FinishDate"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation">
+								<cells>
+									<Text text="{notificationList>MaterialText}"/>
+									<Text text="{notificationList>OrderType}"/>
+									<Text text="{path : 'notificationList>EnterDate', type : 'sap.ui.model.type.DateTime', formatOptions: { style : 'medium'}}"></Text>
+									<Text text="{path : 'notificationList>FinishDate', type : 'sap.ui.model.type.DateTime', formatOptions: { style : 'medium'}}"></Text>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

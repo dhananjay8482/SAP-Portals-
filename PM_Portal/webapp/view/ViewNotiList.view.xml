@@ -1,0 +1,68 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="test.routing-sample.controller.ViewNotiList"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Notifications" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					 <Table id="idOrdersTable" items="{notificationList>/results}" mode="SingleSelectMaster" selectionChange="onPress" growing="true"
+                        growingThreshold="15">
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <Title text="Notification List"/>
+
+                                <Text text="{view>/myName}"></Text>
+                                <Text text="Items Where Listed below"></Text>
+                                <ToolbarSpacer/>
+                                <SearchField width="25%" id="search" liveChange="onSearch" value="{/Notificat}" placeholder="Search with Record Numnber"/>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Text text="Notification Number"/>
+                            </Column>
+                            <Column>
+                                <Text text="Planning Plant"/>
+                            </Column>
+                            <Column>
+                                <Text text="Planning Group"/>
+                            </Column>
+                            <Column>
+                                <Text text="Equipment description"/>
+                            </Column>
+                            <Column>
+                                <Text text="Equipment no"/>
+                            </Column>
+                            <Column>
+                                <Text text="Status"/>
+                            </Column>
+                            <Column>
+                                <Text text="Priotype"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem press="onRowPress" type="Navigation">
+                                <cells>
+                                    <!--<Text text="{notificationList>Descript}"/>-->
+                                    <Text text="{notificationList>Notificat}" id="__text3"/>
+                                    <Text text="{notificationList>ImPlanningPlant}" />
+                                    <Text text="{notificationList>ImPlannerGroup}" />
+                                    <!--<ObjectStatus text="{path: 'notificationList>Descript', formatter: '.emptyDec'}"-->
+                                    <!--    state="{path: 'notificationList>SStatus', formatter: '.formatStatus1'}"></ObjectStatus>-->
+                                    <!--<Text text="{notificationList>Equidescr}"/>-->
+                                    <ObjectStatus text="{path: 'notificationList>Equidescr', formatter: '.emptyDec3'}"></ObjectStatus>
+                                    <!--<Text text="{notificationList>Equipment}"/>-->
+                                    <ObjectStatus text="{path: 'notificationList>Equipment', formatter: '.emptyDec1'}"></ObjectStatus>
+                                    <!--<Text text="{notificationList>SStatus}"/>-->
+                                    <ObjectStatus text="{path: 'notificationList>SStatus', formatter: '.charchange'}"
+                                        icon="{path: 'notificationList>SStatus', formatter: '.statusIndicator'}"
+                                        state="{path: 'notificationList>SStatus', formatter: '.formatStatus'}"></ObjectStatus>
+                                        <Text text="{notificationList>Priotype}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
